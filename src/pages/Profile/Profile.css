@@ -1,0 +1,257 @@
+/* ── Profile Page Layout ──────────────────────────────────────────────────── */
+.profile-page {}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.profile-left,
+.profile-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Avatar ──────────────────────────────────────────────────────────────── */
+.profile-avatar {
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* ── Identity card ─────────────────────────────────────────────────────── */
+.profile-identity-card {}
+
+.profile-identity-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.profile-identity-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.profile-email {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  word-break: break-all;
+}
+
+.profile-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ── Stat pills ────────────────────────────────────────────────────────── */
+.profile-stats-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.profile-stat-pill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.profile-stat-accent { background: var(--accent-glow); border-color: var(--border-accent); }
+.profile-stat-green  { background: var(--green-dim); }
+.profile-stat-gold   { background: var(--gold-dim); }
+
+.profile-stat-icon {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+}
+.profile-stat-accent .profile-stat-icon { color: var(--accent-bright); }
+.profile-stat-green  .profile-stat-icon { color: var(--green); }
+.profile-stat-gold   .profile-stat-icon { color: var(--gold); }
+
+.profile-stat-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.profile-stat-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ── Joined ────────────────────────────────────────────────────────────── */
+.profile-joined {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+}
+
+/* ── Streak ────────────────────────────────────────────────────────────── */
+.profile-streak-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 16px;
+}
+
+.profile-streak-item {
+  text-align: center;
+}
+
+.profile-streak-num {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.profile-streak-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.profile-streak-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+}
+
+.profile-streak-milestones {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-milestone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  transition: border-color var(--transition);
+}
+
+.profile-milestone.achieved {
+  border-color: var(--green);
+  background: var(--green-dim);
+}
+
+/* ── Coin summary ─────────────────────────────────────────────────────── */
+.profile-coin-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-coin-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-coin-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+/* ── Edit form ─────────────────────────────────────────────────────────── */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ── AI access card ────────────────────────────────────────────────────── */
+.profile-ai-card {}
+
+/* ── Attendance list ───────────────────────────────────────────────────── */
+.profile-attend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-attend-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-attend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+/* ── Password form ─────────────────────────────────────────────────────── */
+.profile-pw-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-form-row {
+    grid-template-columns: 1fr;
+  }
+  .profile-stats-row {
+    flex-direction: column;
+  }
+}

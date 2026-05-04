@@ -1,0 +1,90 @@
+.polls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+}
+
+.poll-card { transition: transform var(--transition); }
+.poll-card:hover { transform: translateY(-2px); }
+.poll-card-closed { opacity: 0.7; }
+
+.poll-card-header { margin-bottom: 14px; }
+.poll-question { font-size: 16px; font-weight: 700; font-family: var(--font-display); line-height: 1.4; }
+
+.poll-options { display: flex; flex-direction: column; gap: 8px; }
+
+.poll-option {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  padding: 10px 14px;
+  text-align: left;
+  cursor: default;
+  transition: all var(--transition);
+  min-height: 44px;
+}
+
+.poll-option-active {
+  cursor: pointer;
+}
+.poll-option-active:hover:not(:disabled) {
+  border-color: var(--border-accent);
+  background: var(--accent-glow);
+}
+
+.poll-option-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: var(--accent-glow);
+  border-right: 2px solid var(--accent-dim);
+  transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.poll-option-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.poll-option-text { font-size: 13.5px; font-weight: 500; }
+.poll-option-pct { font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--accent-bright); }
+
+.poll-voted-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--green);
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* Admin results */
+.poll-results {
+  margin-top: 12px;
+  padding: 14px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.poll-result-row {
+  display: grid;
+  grid-template-columns: 1fr 120px 40px 40px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.poll-result-row:last-child { margin-bottom: 0; }
+.poll-result-text { font-size: 13px; font-weight: 500; }
+.poll-result-bar-wrap { height: 6px; background: var(--bg-base); border-radius: 99px; overflow: hidden; }
+.poll-result-bar { height: 100%; background: var(--accent); border-radius: 99px; transition: width 0.5s ease; }
+.poll-result-pct { font-size: 12px; font-weight: 700; color: var(--accent-bright); text-align: right; }
+.poll-result-count { font-size: 11px; color: var(--text-muted); }
+
+@media (max-width: 640px) { .polls-grid { grid-template-columns: 1fr; } }

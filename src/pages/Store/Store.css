@@ -1,0 +1,89 @@
+.store-balance {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.store-ai-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px !important;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(108,99,255,0.08), rgba(34,217,160,0.05)) !important;
+  border-color: var(--border-accent) !important;
+  transition: transform var(--transition), box-shadow var(--transition) !important;
+}
+.store-ai-banner:hover { transform: translateY(-1px); box-shadow: var(--shadow-accent) !important; }
+
+.store-ai-banner-icon {
+  width: 48px; height: 48px;
+  background: var(--accent-glow);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent-bright);
+  flex-shrink: 0;
+}
+
+.store-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.store-card { transition: transform var(--transition), box-shadow var(--transition); }
+.store-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-accent); }
+.store-card-owned { border-color: rgba(34,217,160,0.25) !important; }
+
+.store-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.store-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  line-height: 1.3;
+}
+
+.store-card-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.store-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.store-card-cost {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 640px) {
+  .store-ai-banner { flex-wrap: wrap; }
+  .store-grid { grid-template-columns: 1fr; }
+}
